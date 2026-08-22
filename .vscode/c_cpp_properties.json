@@ -7,6 +7,7 @@
       "includePath": [
         "${workspaceFolder}/lib/cmsis/CMSIS/Core/Include",
         "${workspaceFolder}/lib/fsp/ra/fsp/src/bsp/cmsis/Device/RENESAS/Include",
+        "${workspaceFolder}/lib/fsp/ra/fsp/src/bsp/mcu/ra4m1",
         "${workspaceFolder}/lib/tiny.cpp/include",
         "${workspaceFolder}/lib/tiny-rtt/**",
         "${workspaceFolder}/src",
@@ -24,6 +25,7 @@
       "includePath": [
         "${workspaceFolder}/lib/cmsis/CMSIS/Core/Include",
         "${workspaceFolder}/lib/fsp/ra/fsp/src/bsp/cmsis/Device/RENESAS/Include",
+        "${workspaceFolder}/lib/fsp/ra/fsp/src/bsp/mcu/ra4m1",
         "${workspaceFolder}/lib/tiny.cpp/include",
         "${workspaceFolder}/lib/tiny-rtt/**",
         "${workspaceFolder}/src",

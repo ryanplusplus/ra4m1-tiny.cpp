@@ -30,6 +30,8 @@ void Dummy_Handler(void)
   }
 }
 
+typedef void (*Vector)(void);
+
 void NMI_Handler(void) __attribute__((weak, alias("Dummy_Handler")));
 void HardFault_Handler(void) __attribute__((weak, alias("Dummy_Handler")));
 void MemManage_Handler(void) __attribute__((weak, alias("Dummy_Handler")));
@@ -40,8 +42,8 @@ void DebugMon_Handler(void) __attribute__((weak, alias("Dummy_Handler")));
 void PendSV_Handler(void) __attribute__((weak, alias("Dummy_Handler")));
 void SysTick_Handler(void) __attribute__((weak, alias("Dummy_Handler")));
 
-void (*vector_table[])(void) __attribute__((section(".vectors"), used)) = {
-  (void (*)(void))(uintptr_t)(&_stack_start),
+Vector vector_table[] __attribute__((section(".vectors"), used)) = {
+  (Vector)&_stack_start,
   start,
   NMI_Handler,
   HardFault_Handler,
@@ -78,6 +80,8 @@ void start(void)
 
   src = (uint32_t*)&_vectors_start;
   SCB->VTOR = ((uint32_t)src & SCB_VTOR_TBLOFF_Msk);
+
+  __libc_init_array();
 
   main();
 }

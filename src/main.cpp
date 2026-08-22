@@ -23,6 +23,9 @@ int main()
   Rtt::init();
   Rtt::printf("Hello, RTT!");
 
+  auto& uart = Uart::get_instance();
+  uart.send(0xE2);
+
   while(1) {
     if(timer_group.run()) {
       Interrupts::wait_for_interrupt();

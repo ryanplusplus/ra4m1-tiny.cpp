@@ -3,12 +3,12 @@
  * @brief
  */
 
-#ifndef RegisterProtection_hpp
-#define RegisterProtection_hpp
+#ifndef Prcr_hpp
+#define Prcr_hpp
 
 #include "Device.hpp"
 
-class RegisterProtection {
+class Prcr {
  public:
   static void enable()
   {
@@ -35,9 +35,9 @@ class RegisterProtection {
   template <typename t>
   static void unprotect(t body)
   {
-    auto state = RegisterProtection::save();
+    auto state = Prcr::save();
     body();
-    RegisterProtection::restore(state);
+    Prcr::restore(state);
   }
 };
 

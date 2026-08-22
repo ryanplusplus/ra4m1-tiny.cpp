@@ -5,12 +5,12 @@
 
 #include "Clock.hpp"
 #include "Device.hpp"
-#include "RegisterProtection.hpp"
+#include "Prcr.hpp"
 
 void Clock::init()
 {
   // Switch to HOCO
-  RegisterProtection::unprotect(+[]() {
+  Prcr::unprotect(+[]() {
     // Disable flash cache
     R_FCACHE->FCACHEE = 0;
     {
@@ -44,7 +44,7 @@ void Clock::init()
   });
 
   // Reset TRNG to minimize power usage
-  RegisterProtection::unprotect(+[]() {
+  Prcr::unprotect(+[]() {
     // Start SCE to start TRNG
     R_MSTP->MSTPCRC_b.MSTPC31 = 0;
 

@@ -21,5 +21,6 @@ typedef enum IRQn {
 } IRQn_Type;
 
 #include "R7FA4M1AB.h"
+#include "bsp_elc.h"
 
 #endif
