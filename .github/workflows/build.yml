@@ -14,6 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-26.04, ubuntu-latest, macos-26, macos-latest]
+        board: [uno_r4, xiao]
 
     steps:
     - uses: carlosperate/arm-none-eabi-gcc-action@v1
@@ -27,5 +28,4 @@ jobs:
       with:
         submodules: 'recursive'
 
-    - run: make -j${{ steps.cpu-cores.outputs.count }} -f target.mk BOARD=uno_r4
-    - run: make -j${{ steps.cpu-cores.outputs.count }} -f target.mk BOARD=xiao
+    - run: make -j${{ steps.cpu-cores.outputs.count }} -f target.mk BOARD=${{ matrix.board }}
