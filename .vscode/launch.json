@@ -1,0 +1,52 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "uno_r4",
+      "cwd": "${workspaceRoot}",
+      "executable": "${workspaceFolder}/build/uno_r4/target.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "jlink",
+      "device": "R7FA4M1AB3CFM",
+      "svdFile": "${workspaceFolder}/build/uno_r4/target.svd",
+      "preLaunchTask": "uno_r4-jlink-debug-deps",
+      "rttConfig": {
+        "enabled": true,
+        "address": "auto",
+        "decoders": [
+          {
+            "label": "",
+            "port": 0,
+            "type": "console"
+          }
+        ]
+      }
+    },
+    {
+      "name": "xiao",
+      "cwd": "${workspaceRoot}",
+      "executable": "${workspaceFolder}/build/xiao/target.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "jlink",
+      "device": "R7FA4M1AB3CFM",
+      "svdFile": "${workspaceFolder}/build/xiao/target.svd",
+      "preLaunchTask": "xiao-jlink-debug-deps",
+      "rttConfig": {
+        "enabled": true,
+        "address": "auto",
+        "decoders": [
+          {
+            "label": "",
+            "port": 0,
+            "type": "console"
+          }
+        ]
+      }
+    },
+  ]
+}

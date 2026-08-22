@@ -1,0 +1,15 @@
+[submodule "lib/tiny.cpp"]
+	path = lib/tiny.cpp
+	url = https://github.com/ryanplusplus/tiny.cpp
+[submodule "lib/tiny-rtt"]
+	path = lib/tiny-rtt
+	url = https://github.com/ryanplusplus/tiny-rtt
+[submodule "tools"]
+	path = tools
+	url = https://github.com/ryanplusplus/arm-none-eabi-gcc-tools
+[submodule "lib/fsp"]
+	path = lib/fsp
+	url = https://github.com/renesas/fsp
+[submodule "lib/cmsis"]
+	path = lib/cmsis
+	url = https://github.com/renesas/CMSIS_6

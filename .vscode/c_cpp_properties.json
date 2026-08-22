@@ -1,0 +1,39 @@
+{
+  "configurations": [
+    {
+      "name": "uno_r4",
+      "defines": [
+      ],
+      "includePath": [
+        "${workspaceFolder}/lib/cmsis/CMSIS/Core/Include",
+        "${workspaceFolder}/lib/fsp/ra/fsp/src/bsp/cmsis/Device/RENESAS/Include",
+        "${workspaceFolder}/lib/tiny.cpp/include",
+        "${workspaceFolder}/lib/tiny-rtt/**",
+        "${workspaceFolder}/src",
+        "${workspaceFolder}/src/board/uno_r4",
+        "${workspaceFolder}/src/hardware/**"
+      ],
+      "intelliSenseMode": "gcc-arm",
+      "cStandard": "c11",
+      "cppStandard": "c++20"
+    },
+    {
+      "name": "xiao",
+      "defines": [
+      ],
+      "includePath": [
+        "${workspaceFolder}/lib/cmsis/CMSIS/Core/Include",
+        "${workspaceFolder}/lib/fsp/ra/fsp/src/bsp/cmsis/Device/RENESAS/Include",
+        "${workspaceFolder}/lib/tiny.cpp/include",
+        "${workspaceFolder}/lib/tiny-rtt/**",
+        "${workspaceFolder}/src",
+        "${workspaceFolder}/src/board/xiao",
+        "${workspaceFolder}/src/hardware/**"
+      ],
+      "intelliSenseMode": "gcc-arm",
+      "cStandard": "c11",
+      "cppStandard": "c++20"
+    }
+  ],
+  "version": 4
+}

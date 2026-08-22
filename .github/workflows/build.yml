@@ -1,0 +1,31 @@
+name: Target Build
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-26.04, ubuntu-latest, macos-26, macos-latest]
+
+    steps:
+    - uses: carlosperate/arm-none-eabi-gcc-action@v1
+      with:
+        release: '15.3.Rel1'
+
+    - uses: SimenB/github-actions-cpu-cores@v1
+      id: cpu-cores
+
+    - uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+
+    - run: make -j${{ steps.cpu-cores.outputs.count }} -f target.mk BOARD=uno_r4
+    - run: make -j${{ steps.cpu-cores.outputs.count }} -f target.mk BOARD=xiao
